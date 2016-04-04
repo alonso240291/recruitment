@@ -8,8 +8,10 @@ angular.module('songsApp', [])
   	};
     $scope.submit = function() {
         if ($scope.text) {
-          console.log('Searchng '+ $scope.text);
-          $scope.getSongs($scope.text);
+         	console.log('Searchng '+ $scope.text);
+         	$scope.getSongs($scope.text);
+        }else{
+        	$scope.getSongs("");
         }
     };
 	$scope.getSongs('');
