@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -18,56 +17,53 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
-
-
 </head>
 <body>
-<div id="wrap">
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Now Playing</a></li>
-        <li><a href="#">Rate Songs</a></li>
-      </ul>
-    </nav>
-    <div class="masthead">
-      <h1>
-        <span class="span">
-          <img src="images/hangar_icn.png">
-        </span>
-        <span class="text">Hangar o’clock songs</span>
-      </h1>
-    </div>
-  </header>
+  <div id="wrap">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Now Playing</a></li>
+          <li><a href="#">Rate Songs</a></li>
+        </ul>
+      </nav>
+      <div class="masthead">
+        <h1>
+          <span class="span">
+            <img src="images/hangar_icn.png">
+          </span>
+          <span class="text">Hangar o’clock songs</span>
+        </h1>
+      </div>
+    </header>
 
-  <div class="container">
-    <div ng-app="songsApp" ng-controller="songsController"> 
-      <form ng-submit="submit()">
-        <input type="text" ng-model="text" name="text" placeholder="Search Music" />
-        <input type="submit" id="submit" value="Submit" />
-      </form>
-      <div class="row" ng-repeat="x in songsData">
-        <div class="twelve columns">
-          <div class="playBtn">
-            <a href="{{ x.url  }}"><img src="images/play_btn.png"/></a>
-          </div>
-          <div class="songDetails">
-            <span class="song">{{x.songname}}</span>
-            <span class="artist">{{ x.artistname  }}</span>
-          </div>
-          <div class="mainActions">
-            <form>
-              <input type="radio" id="{{$index +'_1'}}" name="day" value="today" ng-model="value"> 
-              <label for="{{$index +'_1'}}">Today</label>
-              <input type="radio" id="{{$index +'_2'}}" name="day" value="Friday" ng-model="value">
-              <label for="{{$index +'_2'}}">Friday</label>
-            </form>
+    <div class="container">
+      <div ng-app="songsApp" ng-controller="songsController"> 
+        <form ng-submit="submit()">
+          <input type="text" ng-model="text" name="text" placeholder="Search Music" />
+          <input type="submit" id="submit" value="" />
+        </form>
+        <div class="row" ng-repeat="x in songsData">
+          <div class="twelve columns">
+            <div class="playBtn">
+              <a href="{{ x.url  }}"><img src="images/play_btn.png"/></a>
+            </div>
+            <div class="songDetails">
+              <span class="song">{{x.songname | capitalize}}</span>
+              <span class="artist">{{ x.artistname | capitalize }}</span>
+            </div>
+            <div class="mainActions">
+              <form>
+                <input type="radio" id="{{$index +'_1'}}" name="day" value="today" ng-model="value"> 
+                <label for="{{$index +'_1'}}">Today</label>
+                <input type="radio" id="{{$index +'_2'}}" name="day" value="Friday" ng-model="value">
+                <label for="{{$index +'_2'}}">Friday</label>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
   <footer class='u-full-width'>
     <ul>
@@ -80,9 +76,11 @@
       <li><a href="#">Contact Us</a></li>
     </ul>
   </footer>
-  <!-- End Document
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Custom Js Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/songsApp.js"></script>
 
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

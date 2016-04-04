@@ -58,7 +58,7 @@
   width: 75%;
   max-width: 760px;
   margin: 0 auto;
-  margin-top: -10em;
+  margin-top: -13.5em;
   overflow:auto;
   padding-bottom: 7.4em;
   box-sizing: border-box; }
@@ -76,7 +76,7 @@
     border-top: 2px solid #0097b3;
     border-bottom: 2px solid #0097b3;
   }
-@media (min-width: 360px) {
+@media (min-width: 100px) {
   .container {
     width: 99%;
   }
@@ -166,12 +166,12 @@
 }
   @media (min-width: 820px) {
   .container {
-    width: 55%;
+    width: 45%;
   }
 }
-  @media (min-width: 820px) {
+  @media (min-width: 980px) {
   .container {
-    width: 45%;
+    width: 43%;
   }
 }
 /* Base Styles
@@ -192,6 +192,21 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; }
 
+::-webkit-input-placeholder {
+   color: #dfdfdf;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #dfdfdf; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #dfdfdf;  
+}
+
+:-ms-input-placeholder {  
+   color: #dfdfdf; 
+}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -629,7 +644,32 @@ nav li a{
   float: right;
   margin: 12px 11px 0 0;
 }
-
+.container input[type="text"]{
+    font-family: arial;
+    font-size: 1.7rem;
+    padding: 0 25px;
+    background-color: #036481;
+    border: none;
+    color: #dfdfdf;
+    width: 93%;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+}
+.container input[type="submit"]{
+    background: url("../images/search_icn.png") no-repeat center;
+    position: absolute;
+    padding: 0;
+    right: 8%;
+    width: 17px;
+    height: 38px;
+    margin: 0;
+    border: none;
+}
+.container form{
+  text-align: center;
+  margin-bottom: 5.5em;
+}
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
